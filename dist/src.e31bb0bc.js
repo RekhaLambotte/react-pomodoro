@@ -29715,16 +29715,31 @@ var Timer = /*#__PURE__*/function (_React$Component) {
     value: function decreaseTimer() {
       switch (this.state.timerSecond) {
         case 0:
-          this.props.updateTimerMinute();
-          this.setState({
-            timerSecond: 59
-          });
+          if (this.props.timerMinute === 0) {
+            if (this.state.isSession) {
+              this.setState({
+                isSession: false
+              });
+              this.props.toggleInterval(this.state.isSession);
+            } else {
+              this.setState({
+                isSession: true
+              });
+              this.props.toggleInterval(this.state.isSession);
+            }
+          } else {
+            this.props.updateTimerMinute();
+            this.setState({
+              timerSecond: 59
+            });
+          }
+
           break;
 
         default:
           this.setState(function (prevState) {
             return {
-              timerSecond: prevState.timerMinute - 1
+              timerSecond: prevState.timerSecond - 1
             };
           });
           break;
@@ -29741,7 +29756,8 @@ var Timer = /*#__PURE__*/function (_React$Component) {
       this.stopTimer();
       this.props.resetTimer();
       this.setState({
-        timerSecond: 0
+        timerSecond: 0,
+        isSession: true
       });
     }
   }, {
@@ -29816,7 +29832,8 @@ var App = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       breakLength: 5,
       sessionLength: 25,
-      timerMinute: 25
+      timerMinute: 1,
+      isPlay: false
     };
     _this.onIncreaseBreakLength = _this.onIncreaseBreakLength.bind(_assertThisInitialized(_this));
     _this.onDecreaseBreakLength = _this.onDecreaseBreakLength.bind(_assertThisInitialized(_this));
@@ -29869,7 +29886,7 @@ var App = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "onUpdateTimerMinute",
     value: function onUpdateTimerMinute() {
-      this.state(function (prevState) {
+      this.setState(function (prevState) {
         return {
           timerMinute: prevState.timerMinute - 1
         };
@@ -29879,11 +29896,11 @@ var App = /*#__PURE__*/function (_React$Component) {
     key: "onToggleInterval",
     value: function onToggleInterval(isSession) {
       if (isSession) {
-        this.state({
+        this.setState({
           timerMinute: this.state.sessionLength
         });
       } else {
-        this.state({
+        this.setState({
           timerMinute: this.state.breakLength
         });
       }
@@ -29899,10 +29916,12 @@ var App = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, " Pomodoro Clock"), /*#__PURE__*/_react.default.createElement(_BreakInterval.default, {
+        isPaly: this.state.isPlay,
         breakInterval: this.state.breakLength,
         increaseBreak: this.onIncreaseBreakLength,
         decreaseBreak: this.onDecreaseBreakLength
       }), /*#__PURE__*/_react.default.createElement(_SessionLength.default, {
+        isPaly: this.state.isPlay,
         sessionLength: this.state.sessionLength,
         increaseSession: this.onIncreaseSessionLength,
         decreaseSession: this.onDecreaseSessionLength
@@ -29962,7 +29981,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52652" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54812" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

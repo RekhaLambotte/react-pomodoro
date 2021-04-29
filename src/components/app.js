@@ -85,30 +85,38 @@ class App extends React.Component {
 
     render (){
         return ( 
-            <div class="all">
-                <div class="timeUpdate" >
-                <BreakInterval 
-                    isPaly= {this.state.isPlay}                   
-                    breakInterval={this.state.breakLength}
-                    increaseBreak = {this.onIncreaseBreakLength}
-                    decreaseBreak = {this.onDecreaseBreakLength}
-                    />
-                <SessionLength 
-                    isPaly= {this.state.isPlay}
-                    sessionLength={this.state.sessionLength}
-                    increaseSession = {this.onIncreaseSessionLength}
-                    decreaseSession = {this.onDecreaseSessionLength}
-                    />
+            <div class="container">
+                <div class="timeUpdate row" >
+                    <div class="col"> 
+                        <BreakInterval 
+                            isPaly= {this.state.isPlay}                   
+                            breakInterval={this.state.breakLength}
+                            increaseBreak = {this.onIncreaseBreakLength}
+                            decreaseBreak = {this.onDecreaseBreakLength}
+                        />
+                    </div>
+
+                    <div class="col">
+                        <SessionLength 
+                            isPaly= {this.state.isPlay}
+                            sessionLength={this.state.sessionLength}
+                            increaseSession = {this.onIncreaseSessionLength}
+                            decreaseSession = {this.onDecreaseSessionLength}
+                        />
+                    </div>
+                
                 </div>
-                <div>
-                <Timer 
-                    timerMinute={this.state.timerMinute}
-                    breakLength = {this.state.breakLength}
-                    updateTimerMinute = {this.onUpdateTimerMinute}
-                    toggleInterval = {this.onToggleInterval}
-                    resetTimer = {this.onResetTimer}
-                    
-                    />
+                <div class="row">
+                    <div class="col">
+                        <Timer 
+                            timerMinute={this.state.timerMinute}
+                            breakLength = {this.state.breakLength}
+                            updateTimerMinute = {this.onUpdateTimerMinute}
+                            toggleInterval = {this.onToggleInterval}
+                            resetTimer = {this.onResetTimer}
+                            
+                        />
+                    </div>
                 </div>
             </div>
             )

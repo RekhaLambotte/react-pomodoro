@@ -17,10 +17,10 @@ function SessionLength(props) {
     }
 
     return(
-        <section class= "session" >
-            <button class= "btn" onClick = {decreaseSession} > Down </button>
+        <section class= "session d-flex flex-row p-3 " >
+            <button class= "btn btn-info mx-auto" onClick = {decreaseSession} > Down </button>
             <p> {props.sessionLength}</p>
-            <button class= "btn" onClick = {increaseSession} > Up </button>
+            <button class= "btn btn-info mx-auto" onClick = {increaseSession} > Up </button>
         </section>
     );
 }

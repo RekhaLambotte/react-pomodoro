@@ -61,19 +61,21 @@ class Timer extends React.Component {
 
     render () {
         return (
-            <section class= "timer">
-                <section  >
-                    <h4> { this.state.isSession === true ? "Session" : "Break"} </h4>
-                    <span> {this.props.timerMinute} </span>
-                    <span> : </span>
-                    <span> {this.state.timerSecond === 0 
-                    ? "00" : this.state.timerSecond < 10 
-                    ? "0" + this.state.timerSecond : this.state.timerSecond} </span>
+            <section class= "timer d-flex flex-column p-3 ">
+                <section class="d-flex flex-column ">
+                    <h4 class="d-flex justify-content-center"> { this.state.isSession === true ? "Session" : "Break"} </h4>
+                    <div class="d-flex justify-content-center"> 
+                        <span> {this.props.timerMinute} </span>
+                        <span> : </span>
+                        <span> {this.state.timerSecond === 0 
+                        ? "00" : this.state.timerSecond < 10 
+                        ? "0" + this.state.timerSecond : this.state.timerSecond} </span>
+                    </div>
                 </section>
-                <section>
-                    <button class= "btn" onClick={this.playTimer}> Play </button>
-                    <button class= "btn" onClick={this.stopTimer}> Stop </button>
-                    <button class= "btn" onClick={this.resetTimer}> Refresh </button>
+                <section class= "d-flex justify-content-evenly">
+                    <button class= "btn btn-info m-2 " onClick={this.playTimer}> Play </button>
+                    <button class= "btn btn-info m-2 " onClick={this.stopTimer}> Stop </button>
+                    <button class= "btn btn-info m-2 " onClick={this.resetTimer}> Refresh </button>
                 </section>
             </section>
         );

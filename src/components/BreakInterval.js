@@ -19,10 +19,10 @@ function BreakInterval(props){
     };
 
     return(
-        <section>
-            <button onClick={decreaseCounter}> Down </button>
+        <section class="break">
+            <button class= "btn" onClick={decreaseCounter}> Down </button>
             <p> {props.breakInterval}</p>
-            <button onClick={increaseCounter}> Up </button>
+            <button class= "btn" onClick={increaseCounter}> Up </button>
         </section>  
     );
 }

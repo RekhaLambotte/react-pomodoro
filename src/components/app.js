@@ -85,8 +85,8 @@ class App extends React.Component {
 
     render (){
         return ( 
-            <div>
-                <h2> Pomodoro Clock</h2>
+            <div class="all">
+                <div class="timeUpdate" >
                 <BreakInterval 
                     isPaly= {this.state.isPlay}                   
                     breakInterval={this.state.breakLength}
@@ -99,6 +99,8 @@ class App extends React.Component {
                     increaseSession = {this.onIncreaseSessionLength}
                     decreaseSession = {this.onDecreaseSessionLength}
                     />
+                </div>
+                <div>
                 <Timer 
                     timerMinute={this.state.timerMinute}
                     breakLength = {this.state.breakLength}
@@ -107,6 +109,7 @@ class App extends React.Component {
                     resetTimer = {this.onResetTimer}
                     
                     />
+                </div>
             </div>
             )
     }

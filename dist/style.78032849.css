@@ -1,10 +1,21 @@
 header {
+  background: green;
+  height: 5rem;
   color: white;
+  font-size: bold;
   text-align: center;
-  border-radius: red 5px; }
+  display: flex;
+  flex-direction: center;
+  align-items: center;
+  justify-content: center; }
+
+h1 {
+  display: flex;
+  flex-direction: center;
+  align-items: center; }
 
 footer {
-  background: #262626;
+  background: green;
   height: 5rem;
   color: white;
   font-size: bold;
@@ -20,36 +31,19 @@ footer > p {
   align-items: center; }
 
 body {
-  width: auto;
-  height: 100vw;
-  background-image: url("/bg-earth.3deec4ee.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; }
+  background: #262626; }
 
 main {
-  background: rgba(255, 255, 255, 0.295);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: green solid; }
+  padding: 6rem 0; }
   main .timeUpdate {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: black solid; }
+    margin: 2rem; }
   main .break, main .session, main .timer {
     font-size: bold;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 3rem;
-    width: 400px;
-    border: red solid; }
+    background: rgba(244, 244, 244, 0.568);
+    border-radius: 30px; }
+
+button {
+  margin: 1rem; }
 
 
 

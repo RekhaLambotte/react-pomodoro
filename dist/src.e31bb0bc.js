@@ -29599,12 +29599,14 @@ function BreakInterval(props) {
 
   ;
   return /*#__PURE__*/_react.default.createElement("section", {
-    class: "break"
+    class: "break d-flex flex-row align-items-center p-3"
   }, /*#__PURE__*/_react.default.createElement("button", {
-    class: "btn",
+    class: "btn btn-info mx-auto border",
     onClick: decreaseCounter
-  }, " Down "), /*#__PURE__*/_react.default.createElement("p", null, " ", props.breakInterval), /*#__PURE__*/_react.default.createElement("button", {
-    class: "btn",
+  }, " Down "), /*#__PURE__*/_react.default.createElement("p", {
+    class: "d-flex align-items-center border"
+  }, " ", props.breakInterval), /*#__PURE__*/_react.default.createElement("button", {
+    class: "btn btn-info mx-auto",
     onClick: increaseCounter
   }, " Up "));
 }
@@ -29641,12 +29643,12 @@ function SessionLength(props) {
   }
 
   return /*#__PURE__*/_react.default.createElement("section", {
-    class: "session"
+    class: "session d-flex flex-row p-3 "
   }, /*#__PURE__*/_react.default.createElement("button", {
-    class: "btn",
+    class: "btn btn-info mx-auto",
     onClick: decreaseSession
   }, " Down "), /*#__PURE__*/_react.default.createElement("p", null, " ", props.sessionLength), /*#__PURE__*/_react.default.createElement("button", {
-    class: "btn",
+    class: "btn btn-info mx-auto",
     onClick: increaseSession
   }, " Up "));
 }
@@ -29772,15 +29774,23 @@ var Timer = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       return /*#__PURE__*/_react.default.createElement("section", {
-        class: "timer"
-      }, /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement("h4", null, " ", this.state.isSession === true ? "Session" : "Break", " "), /*#__PURE__*/_react.default.createElement("span", null, " ", this.props.timerMinute, " "), /*#__PURE__*/_react.default.createElement("span", null, " : "), /*#__PURE__*/_react.default.createElement("span", null, " ", this.state.timerSecond === 0 ? "00" : this.state.timerSecond < 10 ? "0" + this.state.timerSecond : this.state.timerSecond, " ")), /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement("button", {
-        class: "btn",
+        class: "timer d-flex flex-column p-3 "
+      }, /*#__PURE__*/_react.default.createElement("section", {
+        class: "d-flex flex-column "
+      }, /*#__PURE__*/_react.default.createElement("h4", {
+        class: "d-flex justify-content-center"
+      }, " ", this.state.isSession === true ? "Session" : "Break", " "), /*#__PURE__*/_react.default.createElement("div", {
+        class: "d-flex justify-content-center"
+      }, /*#__PURE__*/_react.default.createElement("span", null, " ", this.props.timerMinute, " "), /*#__PURE__*/_react.default.createElement("span", null, " : "), /*#__PURE__*/_react.default.createElement("span", null, " ", this.state.timerSecond === 0 ? "00" : this.state.timerSecond < 10 ? "0" + this.state.timerSecond : this.state.timerSecond, " "))), /*#__PURE__*/_react.default.createElement("section", {
+        class: "d-flex justify-content-evenly"
+      }, /*#__PURE__*/_react.default.createElement("button", {
+        class: "btn btn-info m-2 ",
         onClick: this.playTimer
       }, " Play "), /*#__PURE__*/_react.default.createElement("button", {
-        class: "btn",
+        class: "btn btn-info m-2 ",
         onClick: this.stopTimer
       }, " Stop "), /*#__PURE__*/_react.default.createElement("button", {
-        class: "btn",
+        class: "btn btn-info m-2 ",
         onClick: this.resetTimer
       }, " Refresh ")));
     }
@@ -29929,26 +29939,34 @@ var App = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       return /*#__PURE__*/_react.default.createElement("div", {
-        class: "all"
+        class: "container"
       }, /*#__PURE__*/_react.default.createElement("div", {
-        class: "timeUpdate"
+        class: "timeUpdate row"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        class: "col"
       }, /*#__PURE__*/_react.default.createElement(_BreakInterval.default, {
         isPaly: this.state.isPlay,
         breakInterval: this.state.breakLength,
         increaseBreak: this.onIncreaseBreakLength,
         decreaseBreak: this.onDecreaseBreakLength
-      }), /*#__PURE__*/_react.default.createElement(_SessionLength.default, {
+      })), /*#__PURE__*/_react.default.createElement("div", {
+        class: "col"
+      }, /*#__PURE__*/_react.default.createElement(_SessionLength.default, {
         isPaly: this.state.isPlay,
         sessionLength: this.state.sessionLength,
         increaseSession: this.onIncreaseSessionLength,
         decreaseSession: this.onDecreaseSessionLength
-      })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Timer.default, {
+      }))), /*#__PURE__*/_react.default.createElement("div", {
+        class: "row"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        class: "col"
+      }, /*#__PURE__*/_react.default.createElement(_Timer.default, {
         timerMinute: this.state.timerMinute,
         breakLength: this.state.breakLength,
         updateTimerMinute: this.onUpdateTimerMinute,
         toggleInterval: this.onToggleInterval,
         resetTimer: this.onResetTimer
-      })));
+      }))));
     }
   }]);
 
@@ -29998,7 +30016,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60647" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64501" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

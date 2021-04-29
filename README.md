@@ -13,6 +13,7 @@ Nous sommes en avril 2021.
 * React
 * Prettier
 * Linter
+* Netlify
 
 ## Auteurs: 
 Projet solo
@@ -31,4 +32,4 @@ terminé
 ## Projet déployé: 
 Lien Github : https://github.com/RekhaLambotte/react-pomodoro
 
-Lien web: 
+Lien web: https://loving-almeida-dbdb8b.netlify.app/

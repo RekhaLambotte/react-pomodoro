@@ -1,0 +1,56 @@
+header {
+  color: white;
+  text-align: center;
+  border-radius: red 5px; }
+
+footer {
+  background: #262626;
+  height: 5rem;
+  color: white;
+  font-size: bold;
+  text-align: center;
+  display: flex;
+  flex-direction: center;
+  align-items: center;
+  justify-content: center; }
+
+footer > p {
+  display: flex;
+  flex-direction: center;
+  align-items: center; }
+
+body {
+  width: auto;
+  height: 100vw;
+  background-image: url("/bg-earth.3deec4ee.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+
+main {
+  background: rgba(255, 255, 255, 0.295);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: green solid; }
+  main .timeUpdate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: black solid; }
+  main .break, main .session, main .timer {
+    font-size: bold;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3rem;
+    width: 400px;
+    border: red solid; }
+
+
+
+/*# sourceMappingURL=/style.78032849.css.map */

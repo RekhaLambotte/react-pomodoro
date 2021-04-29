@@ -29598,9 +29598,13 @@ function BreakInterval(props) {
   }
 
   ;
-  return /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement("button", {
+  return /*#__PURE__*/_react.default.createElement("section", {
+    class: "break"
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    class: "btn",
     onClick: decreaseCounter
   }, " Down "), /*#__PURE__*/_react.default.createElement("p", null, " ", props.breakInterval), /*#__PURE__*/_react.default.createElement("button", {
+    class: "btn",
     onClick: increaseCounter
   }, " Up "));
 }
@@ -29636,9 +29640,13 @@ function SessionLength(props) {
     props.decreaseSession();
   }
 
-  return /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement("button", {
+  return /*#__PURE__*/_react.default.createElement("section", {
+    class: "session"
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    class: "btn",
     onClick: decreaseSession
   }, " Down "), /*#__PURE__*/_react.default.createElement("p", null, " ", props.sessionLength), /*#__PURE__*/_react.default.createElement("button", {
+    class: "btn",
     onClick: increaseSession
   }, " Up "));
 }
@@ -29763,11 +29771,16 @@ var Timer = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement("h4", null, " ", this.state.isSession === true ? "Session" : "Break", " "), /*#__PURE__*/_react.default.createElement("span", null, " ", this.props.timerMinute, " "), /*#__PURE__*/_react.default.createElement("span", null, " : "), /*#__PURE__*/_react.default.createElement("span", null, " ", this.state.timerSecond === 0 ? "00" : this.state.timerSecond < 10 ? "0" + this.state.timerSecond : this.state.timerSecond, " ")), /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement("button", {
+      return /*#__PURE__*/_react.default.createElement("section", {
+        class: "timer"
+      }, /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement("h4", null, " ", this.state.isSession === true ? "Session" : "Break", " "), /*#__PURE__*/_react.default.createElement("span", null, " ", this.props.timerMinute, " "), /*#__PURE__*/_react.default.createElement("span", null, " : "), /*#__PURE__*/_react.default.createElement("span", null, " ", this.state.timerSecond === 0 ? "00" : this.state.timerSecond < 10 ? "0" + this.state.timerSecond : this.state.timerSecond, " ")), /*#__PURE__*/_react.default.createElement("section", null, /*#__PURE__*/_react.default.createElement("button", {
+        class: "btn",
         onClick: this.playTimer
       }, " Play "), /*#__PURE__*/_react.default.createElement("button", {
+        class: "btn",
         onClick: this.stopTimer
       }, " Stop "), /*#__PURE__*/_react.default.createElement("button", {
+        class: "btn",
         onClick: this.resetTimer
       }, " Refresh ")));
     }
@@ -29915,7 +29928,11 @@ var App = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, " Pomodoro Clock"), /*#__PURE__*/_react.default.createElement(_BreakInterval.default, {
+      return /*#__PURE__*/_react.default.createElement("div", {
+        class: "all"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        class: "timeUpdate"
+      }, /*#__PURE__*/_react.default.createElement(_BreakInterval.default, {
         isPaly: this.state.isPlay,
         breakInterval: this.state.breakLength,
         increaseBreak: this.onIncreaseBreakLength,
@@ -29925,13 +29942,13 @@ var App = /*#__PURE__*/function (_React$Component) {
         sessionLength: this.state.sessionLength,
         increaseSession: this.onIncreaseSessionLength,
         decreaseSession: this.onDecreaseSessionLength
-      }), /*#__PURE__*/_react.default.createElement(_Timer.default, {
+      })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Timer.default, {
         timerMinute: this.state.timerMinute,
         breakLength: this.state.breakLength,
         updateTimerMinute: this.onUpdateTimerMinute,
         toggleInterval: this.onToggleInterval,
         resetTimer: this.onResetTimer
-      }));
+      })));
     }
   }]);
 
@@ -29981,7 +29998,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54812" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60647" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -8,6 +8,7 @@ class Timer extends React.Component {
             isSession: true,
             timerSecond: 0,
             intervalId: 0,
+            show: false
         }
 
         this.playTimer = this.playTimer.bind(this);
@@ -59,6 +60,7 @@ class Timer extends React.Component {
         })
     }
 
+
     render () {
         return (
             <section class= "timer d-flex flex-column p-3 ">
@@ -77,6 +79,7 @@ class Timer extends React.Component {
                     <button class= "btn btn-info m-2 " onClick={this.stopTimer}> Stop </button>
                     <button class= "btn btn-info m-2 " onClick={this.resetTimer}> Refresh </button>
                 </section>
+
             </section>
         );
     }

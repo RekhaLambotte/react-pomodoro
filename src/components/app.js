@@ -13,6 +13,7 @@ class App extends React.Component {
             sessionLength: 25,
             timerMinute: 1,
             isPlay: false,
+    
         }
 
         this.onIncreaseBreakLength = this.onIncreaseBreakLength.bind(this);
@@ -83,6 +84,9 @@ class App extends React.Component {
         })
     }
 
+  
+
+
     render (){
         return ( 
             <div class="container">
@@ -118,6 +122,8 @@ class App extends React.Component {
                         />
                     </div>
                 </div>
+
+                
             </div>
             )
     }

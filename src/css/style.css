@@ -1,5 +1,5 @@
 header {
-  background: green;
+  background: #3d3d3d;
   height: 5rem;
   color: white;
   font-size: bold;
@@ -15,7 +15,7 @@ h1 {
   align-items: center; }
 
 footer {
-  background: green;
+  background: #3d3d3d;
   height: 5rem;
   color: white;
   font-size: bold;
@@ -31,16 +31,19 @@ footer > p {
   align-items: center; }
 
 body {
-  background: #262626; }
+  background: lightblue; }
 
 main {
-  padding: 6rem 0; }
+  padding: 6rem 0;
+  height: auto; }
   main .timeUpdate {
     margin: 2rem; }
   main .break, main .session, main .timer {
     font-size: bold;
     background: rgba(244, 244, 244, 0.568);
-    border-radius: 30px; }
+    border-radius: 30px;
+    border-radius: 40px;
+    box-shadow: 0px 0px 105px 60px rgba(204, 76, 174, 0.44); }
 
 button {
   margin: 1rem; }

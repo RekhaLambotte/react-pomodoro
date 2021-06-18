@@ -29599,14 +29599,14 @@ function BreakInterval(props) {
 
   ;
   return /*#__PURE__*/_react.default.createElement("section", {
-    class: "break d-flex flex-row align-items-center p-3"
+    class: "break d-flex flex-row align-items-center justify-content-center p-3"
   }, /*#__PURE__*/_react.default.createElement("button", {
-    class: "btn btn-info mx-auto border",
+    class: "btn btn-black mx-auto ",
     onClick: decreaseCounter
   }, " Down "), /*#__PURE__*/_react.default.createElement("p", {
-    class: "d-flex align-items-center border"
+    class: " time"
   }, " ", props.breakInterval), /*#__PURE__*/_react.default.createElement("button", {
-    class: "btn btn-info mx-auto",
+    class: "btn mx-auto btn-black",
     onClick: increaseCounter
   }, " Up "));
 }
@@ -29643,12 +29643,14 @@ function SessionLength(props) {
   }
 
   return /*#__PURE__*/_react.default.createElement("section", {
-    class: "session d-flex flex-row p-3 "
+    class: "break d-flex flex-row align-items-center justify-content-center p-3"
   }, /*#__PURE__*/_react.default.createElement("button", {
-    class: "btn btn-info mx-auto",
+    class: "btn btn-black mx-auto ",
     onClick: decreaseSession
-  }, " Down "), /*#__PURE__*/_react.default.createElement("p", null, " ", props.sessionLength), /*#__PURE__*/_react.default.createElement("button", {
-    class: "btn btn-info mx-auto",
+  }, " Down "), /*#__PURE__*/_react.default.createElement("p", {
+    class: " time"
+  }, " ", props.sessionLength), /*#__PURE__*/_react.default.createElement("button", {
+    class: "btn mx-auto btn-black",
     onClick: increaseSession
   }, " Up "));
 }
@@ -29703,7 +29705,8 @@ var Timer = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       isSession: true,
       timerSecond: 0,
-      intervalId: 0
+      intervalId: 0,
+      show: false
     };
     _this.playTimer = _this.playTimer.bind(_assertThisInitialized(_this));
     _this.stopTimer = _this.stopTimer.bind(_assertThisInitialized(_this));
@@ -29774,23 +29777,23 @@ var Timer = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       return /*#__PURE__*/_react.default.createElement("section", {
-        class: "timer d-flex flex-column p-3 "
+        class: "break d-flex flex-column flex-row align-items-center justify-content-center p-3 "
       }, /*#__PURE__*/_react.default.createElement("section", {
         class: "d-flex flex-column "
-      }, /*#__PURE__*/_react.default.createElement("h4", {
-        class: "d-flex justify-content-center"
+      }, /*#__PURE__*/_react.default.createElement("h2", {
+        class: "d-flex justify-content-center titleSession"
       }, " ", this.state.isSession === true ? "Session" : "Break", " "), /*#__PURE__*/_react.default.createElement("div", {
-        class: "d-flex justify-content-center"
+        class: "d-flex justify-content-center timeSession"
       }, /*#__PURE__*/_react.default.createElement("span", null, " ", this.props.timerMinute, " "), /*#__PURE__*/_react.default.createElement("span", null, " : "), /*#__PURE__*/_react.default.createElement("span", null, " ", this.state.timerSecond === 0 ? "00" : this.state.timerSecond < 10 ? "0" + this.state.timerSecond : this.state.timerSecond, " "))), /*#__PURE__*/_react.default.createElement("section", {
         class: "d-flex justify-content-evenly"
       }, /*#__PURE__*/_react.default.createElement("button", {
-        class: "btn btn-info m-2 ",
+        class: " btn btn-black ms-10 ",
         onClick: this.playTimer
       }, " Play "), /*#__PURE__*/_react.default.createElement("button", {
-        class: "btn btn-info m-2 ",
+        class: " btn btn-black ms-10",
         onClick: this.stopTimer
       }, " Stop "), /*#__PURE__*/_react.default.createElement("button", {
-        class: "btn btn-info m-2 ",
+        class: " btn btn-black ms-10",
         onClick: this.resetTimer
       }, " Refresh ")));
     }
@@ -30016,7 +30019,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64501" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50943" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
